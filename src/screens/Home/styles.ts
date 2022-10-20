@@ -22,18 +22,19 @@ export const Container = styled.Pressable`
 
 export const Title = styled.Text`
     font-family: ${THEME.FONTS.Roboto_700Bold};
-    font-size: 30px;
+    font-size: 50px;
+    text-align: center;
     color: white;
 `
 
 export const Rick = styled.Text`
     font-family: ${THEME.FONTS.Roboto_700Bold};
-    font-size: 30px;
+    font-size: 50px;
     color: ${THEME.COLORS.GREEN_RICK};
 `
 
 export const Morty = styled.Text`
     font-family: ${THEME.FONTS.Roboto_700Bold};
-    font-size: 30px;
+    font-size: 50px;
     color: ${THEME.COLORS.YELLOW_MORTY};
 `

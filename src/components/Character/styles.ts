@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     width: 80%;
-    height: 200px;
+    height: 350px;
     
     align-items: center;
     justify-content: center;
@@ -25,18 +25,20 @@ export const ContentRow = styled.View`
 
 export const Titles = styled.Text`
     font-family: ${THEME.FONTS.Roboto_500Medium};
+    font-size: 22px;
     color: white;
 `
 
 export const Image = styled.Image`
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
 
     border-radius: 20px;
 `
     
 export const Name = styled.Text`
     font-family: ${THEME.FONTS.Roboto_500Medium};
+    font-size: 22px;
     color: white;
 `
 
@@ -52,5 +54,6 @@ export const PointStatus = styled.View<{status: string}>`
 
 export const Info = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
+    font-size: 22px;
     color: white;
 `
