@@ -3,7 +3,9 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     width: 80%;
-    height: 350px;
+    height: 320px;
+
+    margin-bottom: 15px;
     
     align-items: center;
     justify-content: center;
