@@ -1,4 +1,4 @@
-import { Keyboard, StatusBar } from "react-native";
+import { Keyboard, KeyboardAvoidingView, StatusBar } from "react-native";
 
 import { SearchArea } from "../../components/SearchArea";
 import { Character } from "../../components/Character";
@@ -9,12 +9,11 @@ export const Home = () => {
     return (
         <Container
         onPress={() => Keyboard.dismiss()}>
-            <Title>
-                <Rick>Rick</Rick> and <Morty>Morty</Morty> Library
-            </Title>
-            <Character />
-            <SearchArea />
-
+        <Title>
+            <Rick>Rick</Rick> and <Morty>Morty</Morty> Library
+        </Title>
+        <Character />
+        <SearchArea />
         <StatusBar backgroundColor='black' barStyle='light-content' />
         </Container>
     );

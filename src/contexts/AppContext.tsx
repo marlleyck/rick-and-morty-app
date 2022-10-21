@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { Keyboard } from "react-native";
+
 import { api } from '../services/api';
+
 import { CharacterType } from "../types";
 
 type AppContextType = {

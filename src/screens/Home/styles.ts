@@ -7,6 +7,7 @@ export const Container = styled.Pressable`
     align-items: center;
     justify-content: space-between;
 
+
     padding: 50px 0;
 
     background-color: ${THEME.COLORS.BACKGROUND};
