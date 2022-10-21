@@ -14,3 +14,11 @@ export type CharacterType = {
     };
     image: string;
 }
+
+export type LocationType = {
+    id: number;
+    name: string;
+    dimension: string;
+    residents: string[];
+    type: string;
+}
