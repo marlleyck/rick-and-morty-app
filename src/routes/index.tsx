@@ -1,5 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";  
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Home } from "../screens/Home";
 import { LocationPageOne } from "../screens/LocationPageOne";
@@ -8,9 +9,10 @@ import { Entypo } from '@expo/vector-icons';
 
 import { THEME } from "../THEME";
 
+const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 
-export default function Routes() {
+function Tabs() {
     return (
         <Tab.Navigator
         screenOptions={{
@@ -44,5 +46,21 @@ export default function Routes() {
                 )
             }} />
         </Tab.Navigator>
+    );
+}
+
+export default function Routes() {
+    return (
+        <Stack.Navigator
+        screenOptions={{
+            headerShown: false
+        }}>
+            <Stack.Screen 
+            name="StackHome"
+            component={Tabs} />
+            <Stack.Screen
+            name="Locais"
+            component={LocationPageOne} />
+        </Stack.Navigator>
     );
 }
