@@ -6,7 +6,8 @@ export const THEME = {
         YELLOW_MORTY: '#FBEE6E',
         GREEN: '#55CC44',
         RED: '#D63D2E',
-        PURPLE: '#512CB8'
+        PURPLE: '#512CB8',
+        BLACK: '#000000'
     },
     FONTS: {
         Roboto_500Medium: 'Roboto_500Medium',

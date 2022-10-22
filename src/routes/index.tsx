@@ -9,8 +9,10 @@ import { Entypo } from '@expo/vector-icons';
 
 import { THEME } from "../THEME";
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator<PropsNavigationStack>()
 const Tab = createBottomTabNavigator()
+
+import { PropsNavigationStack } from "./Models";
 
 function Tabs() {
     return (
