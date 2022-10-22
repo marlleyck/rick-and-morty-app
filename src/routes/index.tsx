@@ -2,9 +2,9 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";  
 
 import { Home } from "../screens/Home";
-import { Locations } from "../screens/Locations";
+import { LocationPageOne } from "../screens/LocationPageOne";
 
-import { Entypo, Feather } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 import { THEME } from "../THEME";
 
@@ -36,8 +36,8 @@ export default function Routes() {
             }} />
 
             <Tab.Screen 
-            name="Locations" 
-            component={Locations}
+            name="Locais" 
+            component={LocationPageOne}
             options={{
                 tabBarIcon: ({ size, color }) => (
                     <Entypo name='globe' size={size} color={color} />

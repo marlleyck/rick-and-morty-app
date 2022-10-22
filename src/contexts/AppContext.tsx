@@ -10,8 +10,8 @@ type AppContextType = {
     setCharacter: (newState: CharacterType) => void;
     setCharacterName: (newState: string) => void;
     isLoading: boolean;
-    charactersList: LocationType[] | undefined;
-    setCharactersList: (newState: LocationType[]) => void;
+    locationList: LocationType[] | undefined;
+    setLocationList: (newState: LocationType[]) => void;
 }
 
 export const AppContext = createContext<AppContextType>({} as AppContextType);
@@ -19,7 +19,7 @@ export const AppContext = createContext<AppContextType>({} as AppContextType);
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [character, setCharacter] = useState<CharacterType>()
-    const [charactersList, setCharactersList] = useState<LocationType[]>()
+    const [locationList, setLocationList] = useState<LocationType[]>()
     const [characterName, setCharacterName] = useState('rick sanchez')
     
 
@@ -44,7 +44,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
             const {data} = await api.get('/location')
             // console.log('----------0-0-0-0-0-0-0-0-0-0-0-')
             // console.log(data.results)
-            setCharactersList(data.results)
+            setLocationList(data.results)
         }
 
         fetchLocations()
@@ -53,7 +53,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     return (
         <AppContext.Provider 
         value={{character, setCharacter, setCharacterName, isLoading, 
-            charactersList, setCharactersList}}>
+            locationList, setLocationList}}>
             {children}
         </AppContext.Provider>
     );

@@ -2,11 +2,11 @@ import { LocationType } from '../../../types';
 
 import { Container, Name } from './styles';
 
-type CharacterRowProps = {
+type LocationRowProps = {
     item: LocationType;
 }
 
-export const CharacterRow = ({item}: CharacterRowProps) => {
+export const LocationRow = ({item}: LocationRowProps) => {
     return (
         <Container>
             <Name>{item.name}</Name>
