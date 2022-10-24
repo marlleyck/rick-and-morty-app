@@ -1,10 +1,10 @@
 import styled from "styled-components/native";  
 import { THEME } from "../../THEME";
 
-export const Container = styled.View`
+export const Container = styled.View<{location: number}>`
     flex: 1;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     background-color: ${THEME.COLORS.BACKGROUND};
 `
@@ -17,5 +17,5 @@ export const ContainerJumpPages = styled.View`
     justify-content: center;
     flex-direction: row;
 
-    background-color: ${THEME.COLORS.BLACK};
+    background-color: ${THEME.COLORS.BACKGROUND};
 `

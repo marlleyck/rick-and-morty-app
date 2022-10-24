@@ -12,6 +12,9 @@ type AppContextType = {
     isLoading: boolean;
     locationList: LocationType[] | undefined;
     setLocationList: (newState: LocationType[]) => void;
+    goToNextPage: () => void;
+    goToPrevPage: () => void;    
+    location: number;
 }
 
 export const AppContext = createContext<AppContextType>({} as AppContextType);
@@ -19,8 +22,11 @@ export const AppContext = createContext<AppContextType>({} as AppContextType);
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [character, setCharacter] = useState<CharacterType>()
+    const [location, setLocation] = useState(7)
     const [locationList, setLocationList] = useState<LocationType[]>()
     const [characterName, setCharacterName] = useState('rick sanchez')
+    const [prevPage, setPrevPage] = useState('')
+    const [nextPage, setNextPage] = useState('')
     
 
     useEffect(() => {
@@ -41,19 +47,37 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const fetchLocations = async () => {
-            const {data} = await api.get('/location')
+            const {data} = await api.get(`/location?page=${String(location)}`)
             // console.log('----------0-0-0-0-0-0-0-0-0-0-0-')
-            // console.log(data.results)
+            // console.log(data)
+            setPrevPage(data.info.prev)
+            setNextPage(data.info.next)
             setLocationList(data.results)
         }
 
         fetchLocations()
-    }, [])
+    }, [location])
+
+    const goToNextPage = async () => {
+        if (location < 7) {
+            setLocation((state) => state + 1)
+        } else if (location == 7) {
+            setLocation(1)
+        }
+    }
+
+    const goToPrevPage = async () => {
+        if (location > 1) {
+            setLocation((state) => state - 1)
+        } else if (location == 1) {
+            setLocation(7)
+        }
+    }
 
     return (
         <AppContext.Provider 
         value={{character, setCharacter, setCharacterName, isLoading, 
-            locationList, setLocationList}}>
+            locationList, setLocationList, goToNextPage, goToPrevPage, location}}>
             {children}
         </AppContext.Provider>
     );
