@@ -4,14 +4,11 @@ import { LocationList } from '../../components/LocationList';
 import { AntDesign } from '@expo/vector-icons';
 
 import { Container, ContainerJumpPages} from './styles';
-import { useNavigation } from '@react-navigation/native';
 
-import { PropsStack } from '../../routes/Models';
 import { AppContext } from '../../contexts/AppContext';
 
 export const LocationPageOne = () => {
     const { goToNextPage, goToPrevPage, location } = useContext(AppContext)
-    const navigation = useNavigation<PropsStack>()
 
     return (
         <Container location={location}>

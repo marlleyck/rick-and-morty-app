@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Home } from "../screens/Home";
 import { LocationPageOne } from "../screens/LocationPageOne";
+import { LocationDetails } from "../components/LocationList/LocationDetails";
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -60,9 +61,14 @@ export default function Routes() {
             <Stack.Screen 
             name="StackHome"
             component={Tabs} />
+
             <Stack.Screen
             name="Locais"
             component={LocationPageOne} />
+
+            <Stack.Screen
+            name="LocationDetails"
+            component={LocationDetails} />
         </Stack.Navigator>
     );
 }

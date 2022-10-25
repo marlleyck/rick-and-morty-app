@@ -74,6 +74,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
+    
+
     return (
         <AppContext.Provider 
         value={{character, setCharacter, setCharacterName, isLoading, 
