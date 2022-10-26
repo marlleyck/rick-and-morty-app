@@ -57,7 +57,7 @@ export const LocationDetails = ({route}: LocationDetailsProps) => {
 
                     <FlatList
                     data={residents}
-                    keyExtractor={({item, index}: {item: any, index: any}) => index}
+                    keyExtractor={(item: string) => item.substring(42)}
                     renderItem={({item}: {item: string[]}) => <LocationDetailsResident item={item} /> }/>
                 </ContentFlatList>
             </Content>

@@ -28,7 +28,7 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
     }, [])
     return (
         <>
-        <Container>
+        <Container onPress={() => console.log(character?.name)}>
             <Image source={{uri: characterImage}}></Image>
             <Text>{character?.name}</Text>
         </Container>

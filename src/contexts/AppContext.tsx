@@ -22,7 +22,7 @@ export const AppContext = createContext<AppContextType>({} as AppContextType);
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [character, setCharacter] = useState<CharacterType>()
-    const [location, setLocation] = useState(7)
+    const [location, setLocation] = useState(1)
     const [locationList, setLocationList] = useState<LocationType[]>()
     const [characterName, setCharacterName] = useState('rick sanchez')
     const [prevPage, setPrevPage] = useState('')
