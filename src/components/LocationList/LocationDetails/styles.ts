@@ -5,6 +5,8 @@ export const Container = styled.View`
     width: 100%;
     height: 100%;
 
+    position: relative;
+
     align-items: center;
     justify-content: center;
 
@@ -41,4 +43,16 @@ export const InfoTitle = styled.Text`
 export const Info = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
     color: white;
+`
+
+export const BackButton = styled.TouchableOpacity`
+    width: 15%;
+    height: 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-left: 5px;
+    justify-content: center;
 `

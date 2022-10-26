@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
-import { RouteProp } from '@react-navigation/native';
+import { RouteProp, useNavigation } from '@react-navigation/native';
+
+import { LocationDetailsResident } from './LocationDetailsResident';
 
 import { LocationType } from '../../../types';
 
-import { Container, Content, FlatList, Info, InfoTitle, ContentInfo } from './styles';
-import { LocationDetailsResident } from './LocationDetailsResident';
+import { AntDesign } from '@expo/vector-icons';
+import { Container, Content, FlatList, Info, InfoTitle, ContentInfo, BackButton } from './styles';
 
 type LocationDetailsProps = {
     route: RouteProp<{params: {itemPressed: LocationType}}, 'params'>;
 }
 
 export const LocationDetails = ({route}: LocationDetailsProps) => {
+    const navigation = useNavigation()
     const [name, setName] = useState('')
     const [dimension, setDimension] = useState('')
     const [type, setType] = useState('')
@@ -25,6 +28,12 @@ export const LocationDetails = ({route}: LocationDetailsProps) => {
 
     return (
         <Container>
+            <BackButton onPress={() => navigation.goBack()}>
+            <AntDesign 
+                name="leftcircle" 
+                size={40} 
+                color="white" />
+            </BackButton>
             <Content>
                 <ContentInfo>
                     <InfoTitle>Nome: </InfoTitle>
