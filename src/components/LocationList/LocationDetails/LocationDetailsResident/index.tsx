@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { AppContext } from '../../../../contexts/AppContext';
 
 import { Loading } from '../../../Loading';
 
 import { CharacterType } from '../../../../types';
+import { PropsStack } from '../../../../routes/Models';
 
 import { Container, Image, Text } from './styles';
 
@@ -12,6 +15,9 @@ type LocationDetailsResidentProps = {
 }
 
 export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) => {
+    const navigation = useNavigation<PropsStack>()
+    const { setCharacterName } = useContext(AppContext)
+
     const [character, setCharacter] = useState<CharacterType>()
     const [characterImage, setCharacterImage] = useState()
     const [apiIsArrived, setApiIsArrived] = useState(false)
@@ -26,9 +32,14 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
 
         fetchApi()
     }, [])
+
+    const handlePressCharacter = async () => {
+        setCharacterName(character?.name!)
+        navigation.navigate('Home')
+    }
     return (
         <>
-        <Container onPress={() => console.log(character?.name)}>
+        <Container onPress={handlePressCharacter}>
             <Image source={{uri: characterImage}}></Image>
             <Text>{character?.name}</Text>
         </Container>

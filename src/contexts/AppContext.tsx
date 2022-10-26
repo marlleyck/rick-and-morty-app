@@ -43,7 +43,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         }
 
         fetchCharacters()
-    }, [])
+    }, [characterName])
 
     useEffect(() => {
         const fetchLocations = async () => {
@@ -75,7 +75,6 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     }
 
     
-
     return (
         <AppContext.Provider 
         value={{character, setCharacter, setCharacterName, isLoading, 

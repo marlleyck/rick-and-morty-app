@@ -28,7 +28,7 @@ export const Character = () => {
                     </ContentRow>
                     <ContentRow>
                         <Titles>Gênero: </Titles>
-                        <Info>{character?.gender}</Info>
+                        <Info>{character?.gender == 'unknown' ? 'Desconhecido' : character?.gender}</Info>
                     </ContentRow>
                 </ContentInfo>
             </>}

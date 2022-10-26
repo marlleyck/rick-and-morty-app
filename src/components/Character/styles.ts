@@ -16,18 +16,22 @@ export const Container = styled.View`
 `
 
 export const ContentInfo = styled.View`
+    width: 100%;
     align-items: center;
     flex-direction: column;
 `
 
 export const ContentRow = styled.View`
+    width: 100%;
+
     align-items: center;
+    justify-content: center;
     flex-direction: row;
 `
 
 export const Titles = styled.Text`
     font-family: ${THEME.FONTS.Roboto_500Medium};
-    font-size: 22px;
+    font-size: 19px;
     color: white;
 `
 
@@ -56,6 +60,7 @@ export const PointStatus = styled.View<{status: string}>`
 
 export const Info = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
-    font-size: 22px;
+    flex-wrap: wrap;
+    font-size: 16px;
     color: white;
 `
