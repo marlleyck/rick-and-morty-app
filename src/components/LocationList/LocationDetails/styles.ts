@@ -23,9 +23,21 @@ export const Content = styled.View`
     background-color: ${THEME.COLORS.BACKGROUND_10};
 `
 
+export const ContentFlatList = styled.View`
+    flex: 1;
+    width: 100%;
+
+    margin-top: 10px;
+    padding-top: 5px;
+    
+    border-radius: 15px;
+    background-color: ${THEME.COLORS.BACKGROUND};
+`
+
 export const FlatList = styled.FlatList`
     flex: 1;
     width: 100%;
+    margin-top: 10px;
 `
 
 export const ContentInfo = styled.View`
@@ -37,11 +49,13 @@ export const ContentInfo = styled.View`
 
 export const InfoTitle = styled.Text`
     font-family: ${THEME.FONTS.Roboto_500Medium};
+    font-size: 18px;
     color: white;
 `
 
 export const Info = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
+    font-size: 16.5px;
     color: white;
 `
 

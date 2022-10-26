@@ -6,7 +6,7 @@ import { LocationDetailsResident } from './LocationDetailsResident';
 import { LocationType } from '../../../types';
 
 import { AntDesign } from '@expo/vector-icons';
-import { Container, Content, FlatList, Info, InfoTitle, ContentInfo, BackButton } from './styles';
+import { Container, Content, FlatList, Info, InfoTitle, ContentInfo, BackButton, ContentFlatList } from './styles';
 
 type LocationDetailsProps = {
     route: RouteProp<{params: {itemPressed: LocationType}}, 'params'>;
@@ -50,10 +50,16 @@ export const LocationDetails = ({route}: LocationDetailsProps) => {
                     <Info>{type}</Info>
                 </ContentInfo>
 
-                <FlatList
-                data={residents}
-                keyExtractor={({item, index}: {item: any, index: any}) => index}
-                renderItem={({item}: {item: string[]}) => <LocationDetailsResident item={item} /> }/>
+                <ContentFlatList>
+                    <ContentInfo>
+                        <InfoTitle>Moradores</InfoTitle>
+                    </ContentInfo>
+
+                    <FlatList
+                    data={residents}
+                    keyExtractor={({item, index}: {item: any, index: any}) => index}
+                    renderItem={({item}: {item: string[]}) => <LocationDetailsResident item={item} /> }/>
+                </ContentFlatList>
             </Content>
         </Container>
     );

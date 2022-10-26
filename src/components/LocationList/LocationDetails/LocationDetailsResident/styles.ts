@@ -11,7 +11,7 @@ export const Container = styled.TouchableOpacity`
     margin-bottom: 10px;
 
     
-    border: 1px solid gray;
+    border: 0.8px solid gray;
 `
 
 export const Text = styled.Text`
