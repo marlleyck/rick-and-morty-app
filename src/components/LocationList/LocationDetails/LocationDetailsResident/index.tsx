@@ -20,7 +20,6 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
     const [character, setCharacter] = useState<CharacterType>()
     const [characterImage, setCharacterImage] = useState()
     const [apiIsArrived, setApiIsArrived] = useState(false)
-    const [characterIsArrived, setCharacterIsArrived] = useState(false)
 
     useEffect(() => {
         const fetchApi = async () => {
