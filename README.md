@@ -12,8 +12,10 @@
 <img style="width:200px;" src="assets/screenshots/residents.jpeg" alt="screenshot"/>
 </div>
 
+<h2 align="center">:computer: Sobre o projeto</h2>
+<p align="center">Nessa aplicação, é possivel pesquisar por nome, qualquer personagem do universo Rick and Morty. É possível também, ir em "locais" e ver todos os lugares que existem na série, e então, poderá ver todos os detalhes desse lugar, desde sua dimensão, seu tipo, até seus residentes.</p>
 
-<h2 align="center">Instalando o projeto na sua máquina:</h2>
+<h2 align="center">:rocket: Instalando o projeto na sua máquina:</h2>
 
 <p align="center">Comece clonando o repositório:</p>
 <pre><strong>$ git clone https://github.com/marlleyck/rick-and-morty-app</strong></pre>
