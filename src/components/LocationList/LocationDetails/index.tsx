@@ -17,7 +17,7 @@ export const LocationDetails = ({route}: LocationDetailsProps) => {
     const [name, setName] = useState('')
     const [dimension, setDimension] = useState('')
     const [type, setType] = useState('')
-    const [residents, setResidents] = useState<string[]>()
+    const [residents, setResidents] = useState<string[] | string>()
 
     useEffect(() => {
        setName(route.params.itemPressed.name)
@@ -42,7 +42,7 @@ export const LocationDetails = ({route}: LocationDetailsProps) => {
 
                 <ContentInfo>
                     <InfoTitle>Dimensão: </InfoTitle>
-                    <Info>{dimension == 'unknown' ? 'Desconhecido' : dimension}</Info>
+                    <Info>{dimension == 'unknown' || dimension == 'Unknown dimension' ?  'Desconhecido' : dimension}</Info>
                 </ContentInfo>
 
                 <ContentInfo>

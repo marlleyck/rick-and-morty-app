@@ -28,7 +28,6 @@ export const ContentRow = styled.View`
     justify-content: center;
     flex-direction: row;
 `
-
 export const Titles = styled.Text`
     font-family: ${THEME.FONTS.Roboto_500Medium};
     font-size: 19px;

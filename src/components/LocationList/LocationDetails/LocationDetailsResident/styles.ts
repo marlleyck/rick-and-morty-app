@@ -14,6 +14,12 @@ export const Container = styled.TouchableOpacity`
     border: 0.8px solid gray;
 `
 
+export const ContainerLoading = styled.View`
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+`
+
 export const Text = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
     color: white;

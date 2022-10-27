@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import axios from 'axios';
 import { AppContext } from '../../../../contexts/AppContext';
-
-import { Loading } from '../../../Loading';
+import axios from 'axios';
 
 import { CharacterType } from '../../../../types';
 import { PropsStack } from '../../../../routes/Models';
 
-import { Container, Image, Text } from './styles';
+import { ActivityIndicator } from 'react-native';
+import { Container, Image, Text, ContainerLoading } from './styles';
 
 type LocationDetailsResidentProps = {
     item: string[];
@@ -21,6 +20,7 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
     const [character, setCharacter] = useState<CharacterType>()
     const [characterImage, setCharacterImage] = useState()
     const [apiIsArrived, setApiIsArrived] = useState(false)
+    const [characterIsArrived, setCharacterIsArrived] = useState(false)
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -29,7 +29,6 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
             setCharacter(data)
             setApiIsArrived(true)
         }
-
         fetchApi()
     }, [])
 
@@ -39,10 +38,16 @@ export const LocationDetailsResident = ({item}: LocationDetailsResidentProps) =>
     }
     return (
         <>
-        <Container onPress={handlePressCharacter}>
-            <Image source={{uri: characterImage}}></Image>
-            <Text>{character?.name}</Text>
-        </Container>
+            <Container onPress={handlePressCharacter}>
+                {apiIsArrived ? 
+                <>
+                    <Image source={{uri: characterImage}}></Image>
+                    <Text>{character?.name}</Text>
+                </>
+                : <ContainerLoading>
+                    <ActivityIndicator size='large'  />
+                </ContainerLoading> }
+            </Container>
         </>
     );
 }
